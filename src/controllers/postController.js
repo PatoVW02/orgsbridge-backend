@@ -2,14 +2,15 @@ const Post = require("../models/postModel");
 
 exports.createPost = async (req, res) => {
   try {
-    const { organizationId, title, postType, content } = req.body;
+    const { organizationId, title, postType, content, files } = req.body;
 
     const newPost = new Post({
-        organizationId,
-        title,
-        postType,
-        content,
-        createdAt: new Date(),
+      organizationId,
+      title,
+      postType,
+      content,
+      fileResults: files,
+      createdAt: new Date(),
     });
 
     const savedPost = await newPost.save();

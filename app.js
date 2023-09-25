@@ -10,6 +10,7 @@ const postTypeRoutes = require("./src/routes/postTypeRoutes");
 const reviewRoutes = require("./src/routes/reviewRoutes");
 const organizationRoutes = require("./src/routes/organizationRoutes")
 const postRoutes = require("./src/routes/postRoutes");
+const fileRoutes = require("./src/routes/fileRoutes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpecs = require("./swagger");
 const passport = require("./passport");
@@ -31,6 +32,7 @@ app.use("/post-types", postTypeRoutes);
 app.use("/reviews", reviewRoutes);
 app.use("/organizations", organizationRoutes)
 app.use("/posts", postRoutes);
+app.use("/files", fileRoutes);
 
 // Serve Swagger documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
